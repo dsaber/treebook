@@ -23,13 +23,13 @@ class StatusesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  #test "should create status" do
-  # assert_difference('Status.count') do
-  #    post :create, status: @status.attributes
-  #  end
+  test "should create status" do
+   assert_difference('Status.count') do
+      post :create, status: { content: @status.content }
+    end
 
-  #   assert_redirected_to status_path(assigns(:status))
-  # end
+     assert_redirected_to status_path(assigns(:status))
+  end
 
   test "should show status" do
     get :show, id: @status
