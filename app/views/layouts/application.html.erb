@@ -13,6 +13,9 @@
 				<a class ="brand" href="#">Saberbook</a>
 				<ul class="nav">
 					<li><%= link_to 'All Statuses', feed_path %></li>
+					<% if user_signed_in? %>
+						<li><%= link_to 'Your Statuses', "/#{current_user.profile_name}" %></li>
+					<% end %>
 				</ul>
 				<ul class="nav pull-right">
 					<% if user_signed_in? %>
